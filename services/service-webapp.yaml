@@ -2,12 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: fleetman-webapp
+  labels:
+    app: webapp
 
-specs:
+spec:
   selector:
     app: webapp
   ports:
-    - name: http
+    - name: httpa
       port: 80
       nodePort: 30080
-  type: nodePort
+  type: NodePort
